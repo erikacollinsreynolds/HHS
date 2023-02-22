@@ -22,11 +22,11 @@ const linkedListLength = (head) => {
 
   return count;
 }
-// console.log(linkedListLength(ll))
+console.log(linkedListLength(ll))
 
 // Recursive Approach
 const linkedListLengthRecursive = (head, count = 0) => {
   if (!head) return count;
   return linkedListLengthRecursive(head.next, ++count);
 }
-// console.log(linkedListLengthRecursive(ll))
+console.log(linkedListLengthRecursive(ll))
