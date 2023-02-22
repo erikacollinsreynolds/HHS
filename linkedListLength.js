@@ -10,6 +10,7 @@ ll.next.next.next = new Node('D');
 ll.next.next.next.next = new Node('E');
 ll.next.next.next.next.next = new Node('F'); 
 
+// Iterative Approach
 const linkedListLength = (head) => {
   let curr = head;
   let count = 0;
@@ -21,13 +22,11 @@ const linkedListLength = (head) => {
 
   return count;
 }
-
 // console.log(linkedListLength(ll))
 
-
+// Recursive Approach
 const linkedListLengthRecursive = (head, count = 0) => {
   if (!head) return count;
   return linkedListLengthRecursive(head.next, ++count);
 }
-
 // console.log(linkedListLengthRecursive(ll))

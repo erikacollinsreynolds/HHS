@@ -1,7 +1,6 @@
 /**
  * Create a function that returns the 
  * height of a Binary Search Tree.
- * 
  */
 
 function BinarySearchTree(value) {
@@ -9,7 +8,6 @@ function BinarySearchTree(value) {
   this.right = null;
   this.left = null;
 }
-
 
 // Add a new node to a BST
 BinarySearchTree.prototype.add = function(value) {
@@ -24,11 +22,8 @@ const tree = new BinarySearchTree(10);
 tree.add(5);
 tree.add(12);
 tree.add(2);
-tree.add(7);
 tree.add(3);
-tree.add(11);
-tree.add(1);
-tree.add(15);
+tree.add(7);
 
 
 const bstHeight = (root) => {
