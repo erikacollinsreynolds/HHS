@@ -11,12 +11,15 @@ BinarySearchTree prototype. Instead, we provide the root as an argument to the
 function.
 */
 
-const tree = new BinarySearchTree(10);
-tree.left = new BinarySearchTree(5);
-tree.right = new BinarySearchTree(20);
-tree.right.right = new BinarySearchTree(25);
-tree.right.left = new BinarySearchTree(15);
-tree.left.left = new BinarySearchTree(0);
+const tree = new BinarySearchTree(5);
+tree.left = new BinarySearchTree(4);
+tree.right = new BinarySearchTree(6);
+tree.right.right = new BinarySearchTree(7);
+tree.right.right.right = new BinarySearchTree(9);
+tree.right.right.right.left = new BinarySearchTree(8)
+tree.left.left = new BinarySearchTree(2);
+tree.left.left.left = new BinarySearchTree(1);
+tree.left.left.right = new BinarySearchTree(3);
 
 // If you are curious to see a visual of the tree once I've assigned all the nodes
 // console.log(tree)
@@ -60,79 +63,79 @@ const bstSumPreOrder = root => {
 console.log(bstSumPreOrder(tree))
 
 
-// // // IN ORDER
-// const bstSumInOrder = root => {
-//   // // a place to visualize the values (OPTIONAL)
-//   let values = [];
+// // IN ORDER
+const bstSumInOrder = root => {
+  // // a place to visualize the values (OPTIONAL)
+  let values = [];
 
-//   // declare a variable to store sum
-//   let sum = 0;
+  // declare a variable to store sum
+  let sum = 0;
 
-//   // create helper function to traverse in in-order
-//   function traverseInOrder(root) {
+  // create helper function to traverse in in-order
+  function traverseInOrder(root) {
 
-//     // edge case if root is null
-//     if (!root) return sum;
+    // edge case if root is null
+    if (!root) return sum;
 
-//     // if left node exists, traverse recursively 
-//     if (root.left) traverseInOrder(root.left);
+    // if left node exists, traverse recursively 
+    if (root.left) traverseInOrder(root.left);
 
-//     // // push root node to values (OPTIONAL)
-//     values.push(root.value);
+    // // push root node to values (OPTIONAL)
+    values.push(root.value);
 
-//     // add current node value to sum
-//     sum += root.value;
+    // add current node value to sum
+    sum += root.value;
        
-//     // if right node exists, traverse recursively 
-//     if (root.right) traverseInOrder(root.right);
-//   }
+    // if right node exists, traverse recursively 
+    if (root.right) traverseInOrder(root.right);
+  }
 
-//   // invoke helper function
-//   traverseInOrder(root);
+  // invoke helper function
+  traverseInOrder(root);
 
-//   console.log(`The sum is: ${sum} and here are the nodes we visited in in-order: ${values}`)
+  console.log(`The sum is: ${sum} and here are the nodes we visited in in-order: ${values}`)
 
-//   // return sum
-//   return sum;
-// };
+  // return sum
+  return sum;
+};
 
-// console.log(bstSumInOrder(tree))
+console.log(bstSumInOrder(tree))
 
 
-// // // POST ORDER
-// const bstSumPostOrder = root => {
-//   // // a place to visualize the values (OPTIONAL)
-//   let values = [];
+// // POST ORDER
+const bstSumPostOrder = root => {
+  // // a place to visualize the values (OPTIONAL)
+  let values = [];
 
-//   // declare a variable to store sum
-//   let sum = 0;
+  // declare a variable to store sum
+  let sum = 0;
 
-//   // create helper function to traverse in post-order
-//   function traversePostOrder(root) {
+  // create helper function to traverse in post-order
+  function traversePostOrder(root) {
 
-//     // edge case if root is null
-//     if (!root) return sum;
+    // edge case if root is null
+    if (!root) return sum;
 
-//     // if left node exists, traverse recursively 
-//     if (root.left) traversePostOrder(root.left);
+    // if left node exists, traverse recursively 
+    if (root.left) traversePostOrder(root.left);
     
-//     // if right node exists, traverse recursively 
-//     if (root.right) traversePostOrder(root.right);
+    // if right node exists, traverse recursively 
+    if (root.right) traversePostOrder(root.right);
 
-//     // // push root node to values (OPTIONAL)
-//     values.push(root.value);
+    // // push root node to values (OPTIONAL)
+    values.push(root.value);
 
-//     // add current node value to sum
-//     sum += root.value;
-//   }
+    // add current node value to sum
+    sum += root.value;
+  }
 
-//   // invoke helper function
-//   traversePostOrder(root);
+  // invoke helper function
+  traversePostOrder(root);
 
-//   console.log(`The sum is: ${sum} and here are the nodes we visited in post-order: ${values}`)
+  console.log(`The sum is: ${sum} and here are the nodes we visited in post-order: ${values}`)
 
-//   // return sum
-//   return sum;
-// };
+  // return sum
+  return sum;
+};
 
-// console.log(bstSumPostOrder(tree))
+console.log(bstSumPostOrder(tree))
