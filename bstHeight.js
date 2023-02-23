@@ -25,7 +25,7 @@ tree.add(2);
 tree.add(3);
 tree.add(7);
 
-
+console.log(tree)
 const bstHeight = (root) => {
   if (!root) return -1;
   return 1 + Math.max(bstHeight(root.left), bstHeight(root.right)); 
